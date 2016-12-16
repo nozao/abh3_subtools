@@ -43,7 +43,7 @@ class abh3Converter:
         self.t_next = rospy.Time.now()+ self.t_delta
         self.base_width = self.width
         self.base_frame_id = 'base_link'
-        self.odom_frame_id = '/abh3/main/odom_frame_id'
+        self.odom_frame_id = 'odom_frame_id'
         self.v_left = 0                 # current setpoint velocity
         self.v_right = 0
         self.v_des_left = 0             # cmd_vel setpoint
@@ -56,7 +56,7 @@ class abh3Converter:
         self.dx = 0                     # speeds in x/rotation
         self.dr = 0
         self.then = rospy.Time.now()    # time for determining dx/dy
-        self.odomPub = rospy.Publisher("/odom", Odometry, queue_size=5)
+        self.odomPub = rospy.Publisher("odom", Odometry, queue_size=5)
 
         self.odomBroadcaster = TransformBroadcaster()
         #+> for odometry calculate
